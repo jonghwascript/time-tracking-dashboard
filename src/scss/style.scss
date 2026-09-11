@@ -1,6 +1,6 @@
 @use 'fonts' as *;
 @use 'reset' as *;
-@use 'variables' as v;
+@use 'variables' as *;
 @use 'mixins' as m; // _mixins.scss 파일이 같은 폴더에 있는 경우
 
 button:focus-visible {
@@ -11,6 +11,9 @@ button:focus-visible {
 body {
   @include m.font-style(18px, 400, 1);
   background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 // 컨텐츠 가운데 정렬 + 최대폭 wrapper. 챌린지마다 max-width 값만 바꿔서 쓴다.
@@ -18,5 +21,181 @@ body {
   @include m.container(1110px, 24px);
 }
 
-// tablet/desktop에서 레이아웃 구조 자체가 바뀔 때(예: flex-direction, grid-template-columns)는
-// @include m.mq('tablet') { ... } 처럼 각 셀렉터 안에서 사용한다.
+main {  
+  width: min(327px, 100%);
+  padding: 24px 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: 203px repeat(6, 160px);
+  grid-template-areas:
+    "repoter"
+    "work"
+    "play"
+    "study"
+    "exercise"
+    "social"
+    "self-care"
+  ;
+  row-gap: 24px;
+}
+
+.repoter {
+  grid-area: repoter;
+  background-color: $font-color-navy-900;
+  border-radius: 15px;
+
+  header {
+    padding: 32px;
+    background-color: $purple-600;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    img {
+      width: 64px;
+      height: 64px;
+      aspect-ratio: 64 / 64;
+      border: 3px solid #fff;
+      border-radius: 50%;
+    }
+
+    .user-info {
+      p {
+        @include m.font-style(15px, 400, 1.0);
+        color: $font-color-navy-200;
+      }
+
+      h1 {
+        @include m.font-style(24px, 300, 1.0);
+        color: $font-color-white;
+      }
+    }
+  }
+
+  nav {
+    margin-block-start: 24px;
+
+    ul {
+      display: flex;
+      justify-content: space-around;
+
+      li {
+        .filter-item {
+          @include m.font-style(18px, 400, 1.0);
+          color: $purple-500;
+
+          input[type=radio] {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+
+            &:checked+.text {
+              color: $font-color-white;
+            }
+          }
+
+          .text {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+.box {
+  border-radius: 15px;
+  color: #fff;
+  position: relative;
+
+  background-position: top -10px right 17.42px;
+  background-repeat: no-repeat;
+  background-color: $orange-300;
+  background-image: url(../../images/icon-work.svg);
+
+  .wrapper {
+    padding: 27.5px 24px;
+    margin-block-start: 38px;
+    background-color: $font-color-navy-900;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 15px;
+
+    header {
+      display: flow-root;
+
+      h2 {
+        float: left;
+        @include m.font-style(18px, 500, 1.0);
+        color: $font-color-white;
+      }
+
+      img {
+        float: right;
+        display: block;
+      }
+    }
+
+    .stat-content {
+      margin-block-start: 8px;
+
+      .hours {
+        float: left;
+        @include m.font-style(32px, 300, 1.0);
+        color: $font-color-white;
+        line-height: 32px;
+      }
+
+      .recently {
+        float: right;
+        @include m.font-style(15px, 400, 1.0);
+        color: $font-color-navy-200;
+        line-height: 32px;
+      }
+    }
+  }
+}
+
+.work {
+  grid-area: work;
+}
+
+.play {
+  grid-area: play;
+
+  background-color: $blue-300;
+  background-image: url(../../images/icon-play.svg);
+}
+
+.study {
+  grid-area: study;
+  background-color: $pink-400;
+  background-image: url(../../images/icon-study.svg);
+}
+
+.exercise {
+  grid-area: exercise;
+  background-color: $green-400;
+  background-image: url(../../images/icon-exercise.svg);
+}
+
+.social {
+  grid-area: social;
+  background-color: $purple-700;
+  background-image: url(../../images/icon-social.svg);
+}
+
+.self-care {
+  grid-area: self-care;
+  background-color: $yellow-300;
+  background-image: url(../../images/icon-self-care.svg);
+}

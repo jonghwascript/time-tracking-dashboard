@@ -12,103 +12,134 @@
   <link rel="stylesheet" href="./css/style.css" />
 </head>
 
-<body>
+<body class="container">
   <main>
-    <section>
+    <section class="repoter">
       <header>
         <img src="./images/image-jeremy.png" alt="Jeremy Robson">
-        <p>Report for</p>
-        <h1>Jeremy Robson</h1>
+        <div class="user-info">
+          <p>Report for</p>
+          <h1>Jeremy Robson</h1>
+        </div>
       </header>
       <nav>
-        <button>Daily</button>
-        <button>Weekly</button>
-        <button>Monthly</button>
+        <ul>
+          <li>
+            <label class="filter-item">
+              <input type="radio" name="date-period" value="daily" checked>
+              <span class="text">Daily</span>
+            </label>
+          </li>
+          <li>
+            <label class="filter-item">
+              <input type="radio" name="date-period" value="weekly">
+              <span class="text">Weekly</span>
+            </label>
+          </li>
+          <li>
+            <label class="filter-item">
+              <input type="radio" name="date-period" value="monthly">
+              <span class="text">Monthly</span>
+            </label>
+          </li>
+        </ul>
       </nav>
     </section>
-    <section class="work">
-      <header>
-        <h2>Work</h2>
-        <img src="./images/icon-ellipsis.svg" alt="">
-      </header>
-      <div class="stat-content">
-        <p class="hours">
-          <strong>32hrs</strong>
-        </p>
-        <p class="recently">
-          <strong>32hrs</strong>
-        </p>
+    <section class="box work">
+      <div class="wrapper">
+        <header>
+          <h2>Work</h2>
+          <img src="./images/icon-ellipsis.svg" alt="">
+        </header>
+        <div class="stat-content">
+          <p class="hours">
+            <strong>32hrs</strong>
+          </p>
+          <p class="recently">
+            <strong>32hrs</strong>
+          </p>
+        </div>
       </div>
     </section>
-    <section class="play">
-      <header>
-        <h2>Play</h2>
-        <img src="./images/icon-ellipsis.svg" alt="">
-      </header>
-      <div class="stat-content">
-        <p class="hours">
-          <strong>32hrs</strong>
-        </p>
-        <p class="recently">
-          <strong>32hrs</strong>
-        </p>
+    <section class="box play">
+     <div class="wrapper">
+        <header>
+          <h2>Play</h2>
+          <img src="./images/icon-ellipsis.svg" alt="">
+        </header>
+        <div class="stat-content">
+          <p class="hours">
+            <strong>32hrs</strong>
+          </p>
+          <p class="recently">
+            <strong>32hrs</strong>
+          </p>
+        </div>
+     </div>
+    </section>
+    <section class="box study">
+      <div class="wrapper">
+        <header>
+          <h2>Study</h2>
+          <img src="./images/icon-ellipsis.svg" alt="">
+        </header>
+        <div class="stat-content">
+          <p class="hours">
+            <strong>32hrs</strong>
+          </p>
+          <p class="recently">
+            <strong>32hrs</strong>
+          </p>
+        </div>
       </div>
     </section>
-    <section class="study">
-      <header>
-        <h2>Study</h2>
-        <img src="./images/icon-ellipsis.svg" alt="">
-      </header>
-      <div class="stat-content">
-        <p class="hours">
-          <strong>32hrs</strong>
-        </p>
-        <p class="recently">
-          <strong>32hrs</strong>
-        </p>
+    <section class="box exercise">
+      <div class="wrapper">
+        <header>
+          <h2>Exercise</h2>
+          <img src="./images/icon-ellipsis.svg" alt="">
+        </header>
+        <div class="stat-content">
+          <p class="hours">
+            <strong>32hrs</strong>
+          </p>
+          <p class="recently">
+            <strong>32hrs</strong>
+          </p>
+        </div>
       </div>
     </section>
-    <section class="exercise">
-      <header>
-        <h2>Exercise</h2>
-        <img src="./images/icon-ellipsis.svg" alt="">
-      </header>
-      <div class="stat-content">
-        <p class="hours">
-          <strong>32hrs</strong>
-        </p>
-        <p class="recently">
-          <strong>32hrs</strong>
-        </p>
+    <section class="box social">
+      <div class="wrapper">
+        <header>
+          <h2>Social</h2>
+          <img src="./images/icon-ellipsis.svg" alt="">
+        </header>
+        <div class="stat-content">
+          <p class="hours">
+            <strong>32hrs</strong>
+          </p>
+          <p class="recently">
+            <strong>32hrs</strong>
+          </p>
+        </div>
       </div>
     </section>
-    <section class="social">
-      <header>
-        <h2>Social</h2>
-        <img src="./images/icon-ellipsis.svg" alt="">
-      </header>
-      <div class="stat-content">
-        <p class="hours">
-          <strong>32hrs</strong>
-        </p>
-        <p class="recently">
-          <strong>32hrs</strong>
-        </p>
-      </div>
-    </section>
-    <section class="self-Care">
-      <header>
-        <h2>Self Care</h2>
-        <img src="./images/icon-ellipsis.svg" alt="">
-      </header>
-      <div class="stat-content">
-        <p class="hours">
-          <strong>32hrs</strong>
-        </p>
-        <p class="recently">
-          <strong>32hrs</strong>
-        </p>
-      </div>
+    <section class="box self-Care">
+     <div class="wrapper">
+        <header>
+          <h2>Self Care</h2>
+          <img src="./images/icon-ellipsis.svg" alt="">
+        </header>
+        <div class="stat-content">
+          <p class="hours">
+            <strong>32hrs</strong>
+          </p>
+          <p class="recently">
+            <strong>32hrs</strong>
+          </p>
+        </div>
+     </div>
     </section>
   </main>
   <footer class="attribution">

@@ -1,22 +1,19 @@
 @charset "UTF-8";
 
-$font-primary: 'Rubik',
-sans-serif;
+$font-primary: 'Rubik', sans-serif;
 
 $font-size-preset1: 56px;
 $font-size-preset2: 16px;
 $font-size-preset3: 12px;
 
-
 $primary-color: hsl(246, 80%, 60%);
 
 $gray-200: hsl(0, 0%, 85%);
 $blue-300: hsl(195, 74%, 62%);
-$pink-400:hsl(348, 100%, 68%);
+$pink-400: hsl(348, 100%, 68%);
 $orange-300: hsl(15, 100%, 70%);
-$yellow-300 : hsl(43, 84%, 65%);
+$yellow-300: hsl(43, 84%, 65%);
 $green-400: hsl(145, 58%, 55%);
-
 
 $purple-500: hsl(235, 45%, 61%);
 $purple-600: hsl(246, 80%, 60%);
@@ -26,14 +23,19 @@ $font-color-white: hsl(0, 0%, 100%);
 $font-color-navy-950: hsl(226, 43%, 10%);
 $font-color-navy-900: hsl(235, 46%, 20%);
 $font-color-purple-500: hsl(235, 45%, 61%);
+$font-color-navy-800: hsl(235, 41%, 34%);
 $font-color-navy-200: hsl(236, 100%, 87%);
 
-$bg-gradient: linear-gradient(0deg,
+$bg-gradient: linear-gradient(
+  0deg,
   rgba(255, 106, 58, 1) 0%,
-  rgba(255, 82, 123, 1) 100%);
+  rgba(255, 82, 123, 1) 100%
+);
 
 // 🌟 새 챌린지를 시작할 때 README의 "Layout" 섹션 값으로 아래 두 숫자만 교체하면 된다.
 // 모바일은 breakpoint가 아니라 mobile-first 기본 스타일이므로 맵에 넣지 않는다.
-$breakpoints: ('tablet': 768px,
-  'desktop': 1024px,
+$breakpoints: (
+  'mobile': 480px,
+  'tablet': 768px,
+  'desktop': 1200px,
 );

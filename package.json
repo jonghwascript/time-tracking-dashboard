@@ -18,5 +18,13 @@
     "gulp-sourcemaps": "^3.0.0",
     "prettier": "^3.9.6",
     "sass": "^1.104.0"
+  },
+  "dependencies": {
+    "css": "^2.2.1",
+    "decode-uri-component": "^0.5.0"
+  },
+  "overrides": {
+    "atob": "^2.1.2",
+    "source-map-resolve": "^0.6.0"
   }
 }

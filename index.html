@@ -1,153 +1,166 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <title>Frontend Mentor | Time tracking dashboard</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
 
-  <title>Frontend Mentor | Time tracking dashboard</title>
-  <link rel="stylesheet" href="./css/style.css" />
-</head>
+    <script src="./js/lib/jquery-4.0.0.min.js"></script>
+    <script defer src="./js/main.js"></script>
 
-<body class="container">
-  <main>
-    <section class="repoter">
-      <header>
-        <img src="./images/image-jeremy.png" alt="Jeremy Robson">
-        <div class="user-info">
-          <p>Report for</p>
-          <h1>Jeremy Robson</h1>
-        </div>
-      </header>
-      <nav>
-        <ul>
-          <li>
-            <label class="filter-item">
-              <input type="radio" name="date-period" value="daily" checked>
-              <span class="text">Daily</span>
-            </label>
-          </li>
-          <li>
-            <label class="filter-item">
-              <input type="radio" name="date-period" value="weekly">
-              <span class="text">Weekly</span>
-            </label>
-          </li>
-          <li>
-            <label class="filter-item">
-              <input type="radio" name="date-period" value="monthly">
-              <span class="text">Monthly</span>
-            </label>
-          </li>
-        </ul>
-      </nav>
-    </section>
-    <section class="box work">
-      <div class="wrapper">
-        <header>
-          <h2>Work</h2>
-          <img src="./images/icon-ellipsis.svg" alt="">
-        </header>
-        <div class="stat-content">
-          <p class="hours">
-            <strong>32hrs</strong>
-          </p>
-          <p class="recently">
-            <strong>32hrs</strong>
-          </p>
-        </div>
-      </div>
-    </section>
-    <section class="box play">
-     <div class="wrapper">
-        <header>
-          <h2>Play</h2>
-          <img src="./images/icon-ellipsis.svg" alt="">
-        </header>
-        <div class="stat-content">
-          <p class="hours">
-            <strong>32hrs</strong>
-          </p>
-          <p class="recently">
-            <strong>32hrs</strong>
-          </p>
-        </div>
-     </div>
-    </section>
-    <section class="box study">
-      <div class="wrapper">
-        <header>
-          <h2>Study</h2>
-          <img src="./images/icon-ellipsis.svg" alt="">
-        </header>
-        <div class="stat-content">
-          <p class="hours">
-            <strong>32hrs</strong>
-          </p>
-          <p class="recently">
-            <strong>32hrs</strong>
-          </p>
-        </div>
-      </div>
-    </section>
-    <section class="box exercise">
-      <div class="wrapper">
-        <header>
-          <h2>Exercise</h2>
-          <img src="./images/icon-ellipsis.svg" alt="">
-        </header>
-        <div class="stat-content">
-          <p class="hours">
-            <strong>32hrs</strong>
-          </p>
-          <p class="recently">
-            <strong>32hrs</strong>
-          </p>
-        </div>
-      </div>
-    </section>
-    <section class="box social">
-      <div class="wrapper">
-        <header>
-          <h2>Social</h2>
-          <img src="./images/icon-ellipsis.svg" alt="">
-        </header>
-        <div class="stat-content">
-          <p class="hours">
-            <strong>32hrs</strong>
-          </p>
-          <p class="recently">
-            <strong>32hrs</strong>
-          </p>
-        </div>
-      </div>
-    </section>
-    <section class="box self-Care">
-     <div class="wrapper">
-        <header>
-          <h2>Self Care</h2>
-          <img src="./images/icon-ellipsis.svg" alt="">
-        </header>
-        <div class="stat-content">
-          <p class="hours">
-            <strong>32hrs</strong>
-          </p>
-          <p class="recently">
-            <strong>32hrs</strong>
-          </p>
-        </div>
-     </div>
-    </section>
-  </main>
-  <footer class="attribution">
-    Challenge by
-    <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-    Coded by
-    <a href="https://www.frontendmentor.io/profile/jonghwascript">jonghwascript</a>.
-  </footer>
-</body>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
 
+  <body class="container">
+    <main>
+      <section class="repoter">
+        <header>
+          <img src="./images/image-jeremy.png" alt="Jeremy Robson" />
+          <div class="user-info">
+            <p>Report for</p>
+            <h1>Jeremy Robson</h1>
+          </div>
+        </header>
+        <nav>
+          <ul>
+            <li>
+              <label class="filter-item">
+                <input type="radio" name="date-period" value="daily" checked />
+                <span class="text">Daily</span>
+              </label>
+            </li>
+            <li>
+              <label class="filter-item">
+                <input type="radio" name="date-period" value="weekly" />
+                <span class="text">Weekly</span>
+              </label>
+            </li>
+            <li>
+              <label class="filter-item">
+                <input type="radio" name="date-period" value="monthly" />
+                <span class="text">Monthly</span>
+              </label>
+            </li>
+          </ul>
+        </nav>
+      </section>
+      <section class="box work">
+        <div class="wrapper">
+          <header>
+            <h2>Work</h2>
+            <img src="./images/icon-ellipsis.svg" alt="" />
+          </header>
+          <div class="stat-content">
+            <p class="hours">
+              <strong class="current">32hrs</strong>
+            </p>
+            <p class="recently">
+              <strong class="previous">32hrs</strong>
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="box play">
+        <div class="wrapper">
+          <header>
+            <h2>Play</h2>
+            <img src="./images/icon-ellipsis.svg" alt="" />
+          </header>
+          <div class="stat-content">
+            <p class="hours">
+              <strong class="current">32hrs</strong>
+            </p>
+            <p class="recently">
+              <strong class="previous">32hrs</strong>
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="box study">
+        <div class="wrapper">
+          <header>
+            <h2>Study</h2>
+            <img src="./images/icon-ellipsis.svg" alt="" />
+          </header>
+          <div class="stat-content">
+            <p class="hours">
+              <strong class="current">32hrs</strong>
+            </p>
+            <p class="recently">
+              <strong class="previous">32hrs</strong>
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="box exercise">
+        <div class="wrapper">
+          <header>
+            <h2>Exercise</h2>
+            <img src="./images/icon-ellipsis.svg" alt="" />
+          </header>
+          <div class="stat-content">
+            <p class="hours">
+              <strong class="current">32hrs</strong>
+            </p>
+            <p class="recently">
+              <strong class="previous">32hrs</strong>
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="box social">
+        <div class="wrapper">
+          <header>
+            <h2>Social</h2>
+            <img src="./images/icon-ellipsis.svg" alt="" />
+          </header>
+          <div class="stat-content">
+            <p class="hours">
+              <strong class="current">32hrs</strong>
+            </p>
+            <p class="recently">
+              <strong class="previous">32hrs</strong>
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="box self-Care">
+        <div class="wrapper">
+          <header>
+            <h2>Self Care</h2>
+            <img src="./images/icon-ellipsis.svg" alt="" />
+          </header>
+          <div class="stat-content">
+            <p class="hours">
+              <strong class="current">32hrs</strong>
+            </p>
+            <p class="recently">
+              <strong class="previous">32hrs</strong>
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by
+      <a href="https://www.frontendmentor.io/profile/jonghwascript"
+        >jonghwascript</a
+      >.
+    </footer>
+  </body>
 </html>

@@ -1,9 +1,9 @@
+@charset "UTF-8";
 /*
   Light 300
   Regular 400
   Medium 500
 */
-@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
 /* =========================
    Reset
    ========================= */
@@ -91,7 +91,7 @@ body {
   font-size: 18px;
   font-weight: 400;
   line-height: 1;
-  background-color: #fff;
+  background-color: hsl(226, 43%, 10%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -107,9 +107,35 @@ main {
   padding: 24px 0;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  grid-template-rows: 203px repeat(6, 160px);
+  grid-template-rows: 203px repeat(6, 1fr);
   grid-template-areas: "repoter" "work" "play" "study" "exercise" "social" "self-care";
   row-gap: 24px;
+  /* 맵에 해당 기기 이름이 있는지 확인 */
+  /* 🌟 min-width 기준으로 미디어 쿼리 자동 생성 */
+}
+@media (min-width: 768px) {
+  main {
+    width: min(612px, 100%);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: 203px repeat(2, auto);
+    grid-template-areas: "repoter repoter repoter" "work play study" "exercise social self-care";
+    gap: 24px;
+    /* 믹스인을 호출할 때 전달한 스타일이 여기에 쏙 들어갑니다 */
+  }
+}
+main {
+  /* 맵에 해당 기기 이름이 있는지 확인 */
+  /* 🌟 min-width 기준으로 미디어 쿼리 자동 생성 */
+}
+@media (min-width: 1200px) {
+  main {
+    width: min(1116px, 100%);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: "repoter work play study" "repoter exercise social self-care";
+    gap: 24px;
+    /* 믹스인을 호출할 때 전달한 스타일이 여기에 쏙 들어갑니다 */
+  }
 }
 
 .repoter {
@@ -124,6 +150,17 @@ main {
   display: flex;
   align-items: center;
   gap: 24px;
+  /* 맵에 해당 기기 이름이 있는지 확인 */
+  /* 🌟 min-width 기준으로 미디어 쿼리 자동 생성 */
+}
+@media (min-width: 1200px) {
+  .repoter header {
+    padding: 32px 85px 92px 32px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    /* 믹스인을 호출할 때 전달한 스타일이 여기에 쏙 들어갑니다 */
+  }
 }
 .repoter header img {
   width: 64px;
@@ -136,29 +173,59 @@ main {
   font-family: "Rubik", sans-serif;
   font-size: 15px;
   font-weight: 400;
-  line-height: 1;
+  line-height: 18px;
   color: hsl(236, 100%, 87%);
 }
 .repoter header .user-info h1 {
+  margin-block-start: 8px;
   font-family: "Rubik", sans-serif;
   font-size: 24px;
   font-weight: 300;
-  line-height: 1;
+  line-height: 18px;
   color: hsl(0, 0%, 100%);
+  /* 맵에 해당 기기 이름이 있는지 확인 */
+  /* 🌟 min-width 기준으로 미디어 쿼리 자동 생성 */
+}
+@media (min-width: 1200px) {
+  .repoter header .user-info h1 {
+    font-family: "Rubik", sans-serif;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 47px;
+    /* 믹스인을 호출할 때 전달한 스타일이 여기에 쏙 들어갑니다 */
+  }
 }
 .repoter nav {
   margin-block-start: 24px;
+  /* 맵에 해당 기기 이름이 있는지 확인 */
+  /* 🌟 min-width 기준으로 미디어 쿼리 자동 생성 */
+}
+@media (min-width: 1200px) {
+  .repoter nav {
+    margin-inline-start: 32px;
+    /* 믹스인을 호출할 때 전달한 스타일이 여기에 쏙 들어갑니다 */
+  }
 }
 .repoter nav ul {
   display: flex;
   justify-content: space-around;
+  /* 맵에 해당 기기 이름이 있는지 확인 */
+  /* 🌟 min-width 기준으로 미디어 쿼리 자동 생성 */
+}
+@media (min-width: 1200px) {
+  .repoter nav ul {
+    flex-direction: column;
+    gap: 21px;
+    /* 믹스인을 호출할 때 전달한 스타일이 여기에 쏙 들어갑니다 */
+  }
 }
 .repoter nav ul li .filter-item {
   font-family: "Rubik", sans-serif;
   font-size: 18px;
   font-weight: 400;
-  line-height: 1;
+  line-height: 21px;
   color: hsl(235, 45%, 61%);
+  transition: 0.3s;
 }
 .repoter nav ul li .filter-item input[type=radio] {
   position: absolute;
@@ -176,61 +243,113 @@ main {
 .repoter nav ul li .filter-item .text {
   cursor: pointer;
 }
+.repoter nav ul li .filter-item:hover {
+  color: hsl(0, 0%, 100%);
+}
 
 .box {
   border-radius: 15px;
   color: #fff;
   position: relative;
+  overflow: hidden;
   background-position: top -10px right 17.42px;
   background-repeat: no-repeat;
   background-color: hsl(15, 100%, 70%);
   background-image: url(../../images/icon-work.svg);
 }
 .box .wrapper {
+  grid-row: 2;
   padding: 27.5px 24px;
   margin-block-start: 38px;
   background-color: hsl(235, 46%, 20%);
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  border-radius: 15px;
+  border-radius: 15px 15px 0 0;
+}
+.box .wrapper:hover, .box .wrapper:focus-visible {
+  background-color: hsl(235, 41%, 34%);
+  cursor: pointer;
+}
+.box .wrapper {
+  /* 맵에 해당 기기 이름이 있는지 확인 */
+  /* 🌟 min-width 기준으로 미디어 쿼리 자동 생성 */
+}
+@media (min-width: 1200px) {
+  .box .wrapper {
+    margin-block-start: 45px;
+    /* 믹스인을 호출할 때 전달한 스타일이 여기에 쏙 들어갑니다 */
+  }
+}
+.box .wrapper {
+  display: grid;
+  grid-template-rows: 38px 1fr;
 }
 .box .wrapper header {
-  display: flow-root;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .box .wrapper header h2 {
-  float: left;
+  flex: 1;
   font-family: "Rubik", sans-serif;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1;
+  line-height: 21px;
   color: hsl(0, 0%, 100%);
 }
 .box .wrapper header img {
-  float: right;
-  display: block;
+  max-inline-size: 100%;
+  block-size: auto;
 }
 .box .wrapper .stat-content {
   margin-block-start: 8px;
+  display: flex;
+  align-items: center;
+  /* 맵에 해당 기기 이름이 있는지 확인 */
+  /* 🌟 min-width 기준으로 미디어 쿼리 자동 생성 */
+}
+@media (min-width: 768px) {
+  .box .wrapper .stat-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    /* 믹스인을 호출할 때 전달한 스타일이 여기에 쏙 들어갑니다 */
+  }
 }
 .box .wrapper .stat-content .hours {
-  float: left;
+  flex: 1;
   font-family: "Rubik", sans-serif;
   font-size: 32px;
   font-weight: 300;
-  line-height: 1;
+  line-height: 66px;
   color: hsl(0, 0%, 100%);
-  line-height: 32px;
+}
+.box .wrapper .stat-content .hours strong {
+  font-weight: inherit;
+}
+.box .wrapper .stat-content .hours {
+  /* 맵에 해당 기기 이름이 있는지 확인 */
+  /* 🌟 min-width 기준으로 미디어 쿼리 자동 생성 */
+}
+@media (min-width: 768px) {
+  .box .wrapper .stat-content .hours {
+    font-family: "Rubik", sans-serif;
+    font-size: 56px;
+    font-weight: 300;
+    line-height: 66px;
+    align-items: flex-start;
+    /* 믹스인을 호출할 때 전달한 스타일이 여기에 쏙 들어갑니다 */
+  }
 }
 .box .wrapper .stat-content .recently {
-  float: right;
+  flex: 1;
   font-family: "Rubik", sans-serif;
   font-size: 15px;
   font-weight: 400;
   line-height: 1;
   color: hsl(236, 100%, 87%);
-  line-height: 32px;
+  text-align: right;
+}
+.box .wrapper .stat-content .recently strong {
+  font-weight: inherit;
 }
 
 .work {

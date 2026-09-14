@@ -67,6 +67,10 @@ A typo also taught me how strict a Sass mixin can be: my `mq()` mixin raises `@e
 
 I also ran into a CSS Grid + Flexbox interaction: a `.box` card shares a grid row with the taller `.repoter` sidebar on desktop, so Grid's default `align-self: stretch` makes `.box` grow to match. But its `.wrapper` child was a plain block box sized to its own content, so it didn't grow with it and left a colored gap at the bottom of the card. Turning `.box` into a flex column and giving `.wrapper` `flex: 1 1 auto` made it fill whatever height `.box` ends up with.
 
+A few smaller bugs rounded out the JS/HTML wiring: the `.self-Care` class in the markup didn't match the `.self-care` selectors in CSS/JS (class matching is case-sensitive, so that card silently lost its color, icon, and grid placement), the date-period `change` handler only ran after a click so the dashboard showed static placeholder values until the user picked a filter, and the data request pointed at a nonexistent `./data.js` instead of `./data.json`, so it always fell back to dummy data. Fixing the initial-load handler and the data.json request together made the numbers on screen finally reflect the real dataset.
+
+I also picked up a git habit here: I had reverted a refactor commit and then reapplied a fixed version, which left a revert-then-redo pair sitting in the history. Since both commits were already pushed, cleaning that up meant rebuilding the commit chain with `git commit-tree`/`cherry-pick` and a `--force-with-lease` push rather than just moving on - worth doing before sharing a branch, not after.
+
 ### Continued development
 
 I fixed the height of the dashboard's first grid row (the profile card) to a set value to match the design, but I'd like to explore whether that's the right approach or whether there's a more flexible way to size that row that still holds up across breakpoints.

@@ -32,7 +32,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Repository](https://github.com/jonghwascript/time-tracking-dashboard.git)
-- Live Site URL: [Live site](https://jonghwascript.github.io/time-tracking-dashboard.git)
+- Live Site URL: [Live site](https://jonghwascript.github.io/time-tracking-dashboard)
 
 ## My process
 

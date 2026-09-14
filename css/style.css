@@ -221,6 +221,7 @@ main {
   .repoter nav ul {
     flex-direction: column;
     gap: 1.3125rem;
+    margin-bottom: 28px;
     /* 믹스인을 호출할 때 전달한 스타일이 여기에 쏙 들어갑니다 */
   }
 }
@@ -406,5 +407,4 @@ main {
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
-
 /*# sourceMappingURL=style.css.map */

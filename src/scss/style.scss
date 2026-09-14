@@ -122,6 +122,7 @@ main {
       @include m.mq('desktop') {
         flex-direction: column;
         gap: 1.3125rem;
+        margin-bottom: 28px;
       }
 
       li {

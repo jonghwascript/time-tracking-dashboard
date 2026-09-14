@@ -257,13 +257,15 @@ main {
   color: #fff;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
   background-position: top -10px right 17.42px;
   background-repeat: no-repeat;
   background-color: hsl(15, 100%, 70%);
   background-image: url(../images/icon-work.svg);
 }
 .box .wrapper {
-  grid-row: 2;
+  flex: 1 1 auto;
   padding: 27.5px 24px;
   margin-block-start: 2.375rem;
   background-color: hsl(235, 46%, 20%);

@@ -22,7 +22,7 @@ function handleDatePeriodChange(event) {
   period = $(target).val();
 
   if (period) {
-    $.get('./data.js', successFn, 'text').fail(failFn);
+    $.get('./data.json', successFn, 'json').fail(failFn);
   }
 }
 

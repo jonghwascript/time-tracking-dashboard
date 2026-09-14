@@ -3,17 +3,16 @@
 @use 'variables'as *;
 @use 'mixins'as m; // _mixins.scss 파일이 같은 폴더에 있는 경우
 
-button:focus-visible {
-  outline: 2px solid var(--Grey-500);
-  outline-offset: 2px;
-}
-
 body {
   @include m.font-style(18px, 400, 1);
   background-color: $font-color-navy-950;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @include m.mq('table'){
+    justify-content: center;
+  }
 }
 
 // 컨텐츠 가운데 정렬 + 최대폭 wrapper. 챌린지마다 max-width 값만 바꿔서 쓴다.
@@ -22,11 +21,11 @@ body {
 }
 
 main {
-  width: min(327px, 100%);
-  padding: 24px 0;
+  width: min(20.4375rem, 100%);
+  padding: 1.5rem 0;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  grid-template-rows: 203px repeat(6, 1fr);
+  grid-template-rows: 12.6875rem repeat(6, 1fr);
   grid-template-areas:
     'repoter'
     'work'
@@ -36,29 +35,28 @@ main {
     'social'
     'self-care';
 
-  row-gap: 24px;
+  row-gap: 1.5rem;
 
   @include m.mq('tablet') {
-    width: min(612px, 100%);
+    width: min(38.25rem, 100%);
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-template-rows: 203px repeat(2, auto);
+    grid-template-rows: 12.6875rem repeat(2, auto);
     grid-template-areas:
       'repoter repoter repoter'
       'work play study'
       'exercise social self-care';
-
-    gap: 24px;
+    gap: 1.5rem;
   }
 
   @include m.mq('desktop') {
-    width: min(1116px, 100%);
+    width: min(69.75rem, 100%);
     grid-template-columns: repeat(4, minmax(0, 1fr));
     grid-template-rows: repeat(2, auto);
     grid-template-areas:
       'repoter work play study'
       'repoter exercise social self-care';
 
-    gap: 24px;
+    gap: 1.5rem;
   }
 }
 
@@ -68,52 +66,53 @@ main {
   border-radius: 15px;
 
   header {
-    padding: 32px;
+    padding: 2rem;
     background-color: $purple-600;
     border-radius: 15px;
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 1.5rem;
 
     @include m.mq('desktop') {
-      padding: 32px 85px 92px 32px;
+      padding: 2rem 5.3125rem 5.75rem 2rem;
       flex-direction: column;
       align-items: flex-start;
-      gap: 40px;
+      gap: 2.5rem;
     }
 
     img {
-      width: 64px;
-      height: 64px;
-      aspect-ratio: 64 / 64;
+      width: 100%;
+      max-width: 6.4rem;
+      height: auto;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
       border: 3px solid #fff;
       border-radius: 50%;
     }
 
     .user-info {
       p {
-        @include m.font-style(15px, 400, 18px);
+        @include m.font-style(0.9375rem, 400, 1.125rem);
         color: $font-color-navy-200;
       }
 
       h1 {
         margin-block-start: 8px;
-        @include m.font-style(24px, 300, 18px);
+        @include m.font-style(1.5rem, 300, 1.125rem);
         color: $font-color-white;
 
         @include m.mq('desktop') {
-          @include m.font-style(40px, 300, 47px);
+          @include m.font-style(2.5rem, 300, 2.9375rem);
         }
       }
     }
   }
 
   nav {
-    margin-block-start: 24px;
+    margin-block-start: 1.5rem;
 
     @include m.mq('desktop') {
-      margin-inline-start: 32px;
-      // margin-block-end: 24px;
+      margin-inline-start: 2rem;
     }
 
     ul {
@@ -122,12 +121,12 @@ main {
 
       @include m.mq('desktop') {
         flex-direction: column;
-        gap: 21px;
+        gap: 1.3125rem;
       }
 
       li {
         .filter-item {
-          @include m.font-style(18px, 400, 21px);
+          @include m.font-style(1.125rem, 400, 1.3125rem);
           color: $purple-500;
           transition: 0.3s;
 
@@ -173,7 +172,7 @@ main {
   .wrapper {
     grid-row: 2;
     padding: 27.5px 24px;
-    margin-block-start: 38px;
+    margin-block-start: 2.375rem;
     background-color: $font-color-navy-900;
     border-radius: 15px 15px 0 0;
 
@@ -184,11 +183,11 @@ main {
     }
 
     @include m.mq('desktop') {
-      margin-block-start: 45px;
+      margin-block-start: 2.8125rem;
     }
 
     display: grid;
-    grid-template-rows: 38px 1fr;
+    grid-template-rows: 2.375rem 1fr;
 
     header {
       display: flex;
@@ -197,7 +196,7 @@ main {
 
       h2 {
         flex: 1;
-        @include m.font-style(18px, 500, 21px);
+        @include m.font-style(1.125rem, 500, 1.3125rem);
         color: $font-color-white;
       }
 
@@ -208,19 +207,19 @@ main {
     }
 
     .stat-content {
-      margin-block-start: 8px;
+      margin-block-start: 0.5rem;
       display: flex;
       align-items: center;
 
       @include m.mq('tablet') {
         flex-direction: column;
         align-items: flex-start;
-        gap: 8px;
+        gap: 0.5rem;
       }
 
       .hours {
         flex: 1;
-        @include m.font-style(32px, 300, 66px);
+        @include m.font-style(2rem, 300, 4.125rem);
         color: $font-color-white;
 
         strong {
@@ -228,14 +227,14 @@ main {
         }
 
         @include m.mq('tablet') {
-          @include m.font-style(56px, 300, 66px);
+          @include m.font-style(3.5rem, 300, 4.125rem);
           align-items: flex-start;
         }
       }
 
       .recently {
         flex: 1;
-        @include m.font-style(15px, 400, 1);
+        @include m.font-style(0.9375rem, 400, 1);
         color: $font-color-navy-200;
         text-align: right;
 
@@ -280,4 +279,14 @@ main {
   grid-area: self-care;
   background-color: $yellow-300;
   background-image: url(../images/icon-self-care.svg);
+}
+
+.attribution {
+  color: hsl(228, 45%, 44%);
+  font-size: 0.6875rem;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }

@@ -75,7 +75,6 @@ function timeFrames(obj, title, time) {
 }
 
 function dummyData() {
-  console.log('dummy');
   return [
     {
       title: 'Work',

@@ -17,14 +17,17 @@ const sectionMap = new Map([
   ['Self Care', $selfCare],
 ]);
 
-datePeriod.on('change', (event) => {
+function handleDatePeriodChange(event) {
   const target = event.target;
   period = $(target).val();
 
   if (period) {
     $.get('./data.js', successFn, 'text').fail(failFn);
   }
-});
+}
+
+datePeriod.on('change', handleDatePeriodChange);
+handleDatePeriodChange({ target: datePeriod.filter(':checked')[0] });
 
 function successFn(data) {
   const obj = data;

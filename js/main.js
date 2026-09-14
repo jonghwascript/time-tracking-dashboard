@@ -4,7 +4,7 @@ const $play = $('.box.play');
 const $study = $('.box.study');
 const $exercise = $('.box.exercise');
 const $social = $('.box.social');
-const $selfCare = $('.box.self-Care');
+const $selfCare = $('.box.self-care');
 
 let period = null;
 

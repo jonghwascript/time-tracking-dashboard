@@ -10,7 +10,7 @@ body {
   flex-direction: column;
   align-items: center;
 
-  @include m.mq('table'){
+  @include m.mq('tablet') {
     justify-content: center;
   }
 }

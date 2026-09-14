@@ -255,7 +255,7 @@ main {
   background-position: top -10px right 17.42px;
   background-repeat: no-repeat;
   background-color: hsl(15, 100%, 70%);
-  background-image: url(../../images/icon-work.svg);
+  background-image: url(../images/icon-work.svg);
 }
 .box .wrapper {
   grid-row: 2;
@@ -359,30 +359,30 @@ main {
 .play {
   grid-area: play;
   background-color: hsl(195, 74%, 62%);
-  background-image: url(../../images/icon-play.svg);
+  background-image: url(../images/icon-play.svg);
 }
 
 .study {
   grid-area: study;
   background-color: hsl(348, 100%, 68%);
-  background-image: url(../../images/icon-study.svg);
+  background-image: url(../images/icon-study.svg);
 }
 
 .exercise {
   grid-area: exercise;
   background-color: hsl(145, 58%, 55%);
-  background-image: url(../../images/icon-exercise.svg);
+  background-image: url(../images/icon-exercise.svg);
 }
 
 .social {
   grid-area: social;
   background-color: hsl(264, 64%, 52%);
-  background-image: url(../../images/icon-social.svg);
+  background-image: url(../images/icon-social.svg);
 }
 
 .self-care {
   grid-area: self-care;
   background-color: hsl(43, 84%, 65%);
-  background-image: url(../../images/icon-self-care.svg);
+  background-image: url(../images/icon-self-care.svg);
 }
 /*# sourceMappingURL=style.css.map */

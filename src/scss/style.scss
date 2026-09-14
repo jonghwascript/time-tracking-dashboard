@@ -168,7 +168,7 @@ main {
   background-position: top -10px right 17.42px;
   background-repeat: no-repeat;
   background-color: $orange-300;
-  background-image: url(../../images/icon-work.svg);
+  background-image: url(../images/icon-work.svg);
 
   .wrapper {
     grid-row: 2;
@@ -255,29 +255,29 @@ main {
   grid-area: play;
 
   background-color: $blue-300;
-  background-image: url(../../images/icon-play.svg);
+  background-image: url(../images/icon-play.svg);
 }
 
 .study {
   grid-area: study;
   background-color: $pink-400;
-  background-image: url(../../images/icon-study.svg);
+  background-image: url(../images/icon-study.svg);
 }
 
 .exercise {
   grid-area: exercise;
   background-color: $green-400;
-  background-image: url(../../images/icon-exercise.svg);
+  background-image: url(../images/icon-exercise.svg);
 }
 
 .social {
   grid-area: social;
   background-color: $purple-700;
-  background-image: url(../../images/icon-social.svg);
+  background-image: url(../images/icon-social.svg);
 }
 
 .self-care {
   grid-area: self-care;
   background-color: $yellow-300;
-  background-image: url(../../images/icon-self-care.svg);
+  background-image: url(../images/icon-self-care.svg);
 }

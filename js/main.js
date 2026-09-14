@@ -22,7 +22,7 @@ datePeriod.on('change', (event) => {
   period = $(target).val();
 
   if (period) {
-    $.get('data.js', successFn, 'text').fail(failFn);
+    $.get('./data.js', successFn, 'text').fail(failFn);
   }
 });
 

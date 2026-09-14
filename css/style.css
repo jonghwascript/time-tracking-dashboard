@@ -245,6 +245,10 @@ main {
 .repoter nav ul li .filter-item input[type=radio]:checked + .text {
   color: hsl(0, 0%, 100%);
 }
+.repoter nav ul li .filter-item input[type=radio]:focus-visible + .text {
+  outline: 2px solid hsl(0, 0%, 100%);
+  outline-offset: 4px;
+}
 .repoter nav ul li .filter-item .text {
   cursor: pointer;
 }

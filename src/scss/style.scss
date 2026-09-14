@@ -143,6 +143,11 @@ main {
             &:checked+.text {
               color: $font-color-white;
             }
+
+            &:focus-visible+.text {
+              outline: 2px solid $font-color-white;
+              outline-offset: 4px;
+            }
           }
 
           .text {

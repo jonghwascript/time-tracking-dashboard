@@ -24,6 +24,8 @@ $radius-card: 0.9375rem; // 15px
 // 화면 가장자리 여백. 글꼴을 키워도 좁은 화면에서는 화면 너비의 일정 비율에서 멈춰 글자 자리를 남긴다.
 $space-gutter: min(1.5rem, 6.4vw); // 24px (375px × 6.4%)
 $space-gutter-tablet: min(4.875rem, 10.15625vw); // 78px (768px × 10.15625%)
+// 카드 안쪽 여백도 가장자리 여백에 겹쳐 쌓이므로 375px 미만에서는 같은 비율로 줄인다.
+$space-card: min(2rem, 8.5334vw); // 32px (375px × 8.5334%)
 
 // 🌟 새 챌린지를 시작할 때 README의 "Layout" 섹션 값으로 아래 두 숫자만 교체하면 된다.
 // 모바일은 breakpoint가 아니라 mobile-first 기본 스타일이므로 맵에 넣지 않는다.

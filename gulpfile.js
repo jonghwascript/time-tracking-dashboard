@@ -1,7 +1,6 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const sourcemaps = require('gulp-sourcemaps');
-const cleanCSS = require('gulp-clean-css'); // CSS 압축용
 const browserSync = require('browser-sync').create(); // 로컬 서버 + 자동 새로고침
 
 // 포맷 대상 파일

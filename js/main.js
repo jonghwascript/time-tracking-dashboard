@@ -5,8 +5,10 @@ const $study = $('.box.study');
 const $exercise = $('.box.exercise');
 const $social = $('.box.social');
 const $selfCare = $('.box.self-care');
+const $periodStatus = $('#period-status'); // aria-live 영역: 갱신 사실을 스크린 리더에 알림
 
 let period = null;
+let isFirstRender = true;
 
 const sectionMap = new Map([
   ['Work', $work],
@@ -67,6 +69,18 @@ function modifyStatContent(obj, suffix, prefix) {
       value.find('.previous').text(prefix + val.previous + suffix);
     }
   });
+
+  announcePeriod();
+}
+
+// 첫 렌더링은 알리지 않고, 사용자가 기간을 바꿔 숫자가 갱신된 뒤에만 알린다.
+function announcePeriod() {
+  if (isFirstRender) {
+    isFirstRender = false;
+    return;
+  }
+  const label = datePeriod.filter(':checked').next('.text').text();
+  $periodStatus.text(`${label} hours shown`);
 }
 
 function timeFrames(obj, title, time) {

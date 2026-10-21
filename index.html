@@ -18,7 +18,7 @@
       rel="stylesheet"
     />
 
-    <script src="./js/lib/jquery-4.0.0.min.js"></script>
+    <script defer src="./js/lib/jquery-4.0.0.min.js"></script>
     <script defer src="./js/main.js"></script>
 
     <link rel="stylesheet" href="./css/style.css" />
@@ -28,35 +28,52 @@
     <main class="container">
       <section class="reporter">
         <header>
-          <img src="./images/image-jeremy.png" alt="Jeremy Robson" />
-          <div class="user-info">
+          <img src="./images/image-jeremy.png" alt="" />
+          <hgroup class="user-info">
             <p>Report for</p>
             <h1>Jeremy Robson</h1>
-          </div>
+          </hgroup>
         </header>
         <fieldset class="filter">
           <legend class="u-sr-only">Timeframe</legend>
           <ul>
             <li>
               <label class="filter-item">
-                <input type="radio" name="date-period" value="daily" checked />
+                <input
+                  class="u-sr-only"
+                  type="radio"
+                  name="date-period"
+                  value="daily"
+                  checked
+                />
                 <span class="text">Daily</span>
               </label>
             </li>
             <li>
               <label class="filter-item">
-                <input type="radio" name="date-period" value="weekly" />
+                <input
+                  class="u-sr-only"
+                  type="radio"
+                  name="date-period"
+                  value="weekly"
+                />
                 <span class="text">Weekly</span>
               </label>
             </li>
             <li>
               <label class="filter-item">
-                <input type="radio" name="date-period" value="monthly" />
+                <input
+                  class="u-sr-only"
+                  type="radio"
+                  name="date-period"
+                  value="monthly"
+                />
                 <span class="text">Monthly</span>
               </label>
             </li>
           </ul>
         </fieldset>
+        <p id="period-status" class="u-sr-only" aria-live="polite"></p>
       </section>
       <section class="box work">
         <div class="wrapper">
@@ -81,10 +98,10 @@
           </header>
           <div class="stat-content">
             <p class="hours">
-              <strong class="current">32hrs</strong>
+              <span class="current">32hrs</span>
             </p>
             <p class="recently">
-              <strong class="previous">32hrs</strong>
+              <span class="previous">32hrs</span>
             </p>
           </div>
         </div>
@@ -112,10 +129,10 @@
           </header>
           <div class="stat-content">
             <p class="hours">
-              <strong class="current">32hrs</strong>
+              <span class="current">32hrs</span>
             </p>
             <p class="recently">
-              <strong class="previous">32hrs</strong>
+              <span class="previous">32hrs</span>
             </p>
           </div>
         </div>
@@ -143,10 +160,10 @@
           </header>
           <div class="stat-content">
             <p class="hours">
-              <strong class="current">32hrs</strong>
+              <span class="current">32hrs</span>
             </p>
             <p class="recently">
-              <strong class="previous">32hrs</strong>
+              <span class="previous">32hrs</span>
             </p>
           </div>
         </div>
@@ -174,10 +191,10 @@
           </header>
           <div class="stat-content">
             <p class="hours">
-              <strong class="current">32hrs</strong>
+              <span class="current">32hrs</span>
             </p>
             <p class="recently">
-              <strong class="previous">32hrs</strong>
+              <span class="previous">32hrs</span>
             </p>
           </div>
         </div>
@@ -205,10 +222,10 @@
           </header>
           <div class="stat-content">
             <p class="hours">
-              <strong class="current">32hrs</strong>
+              <span class="current">32hrs</span>
             </p>
             <p class="recently">
-              <strong class="previous">32hrs</strong>
+              <span class="previous">32hrs</span>
             </p>
           </div>
         </div>
@@ -236,10 +253,10 @@
           </header>
           <div class="stat-content">
             <p class="hours">
-              <strong class="current">32hrs</strong>
+              <span class="current">32hrs</span>
             </p>
             <p class="recently">
-              <strong class="previous">32hrs</strong>
+              <span class="previous">32hrs</span>
             </p>
           </div>
         </div>

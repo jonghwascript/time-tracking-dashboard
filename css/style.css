@@ -147,7 +147,7 @@ main {
   aspect-ratio: 1/1;
   flex-shrink: 0;
   object-fit: cover;
-  border: 3px solid #fff;
+  border: 3px solid hsl(0, 0%, 100%);
   border-radius: 50%;
 }
 .reporter header .user-info p {
@@ -203,15 +203,10 @@ main {
   color: hsl(235, 45%, 61%);
   transition: 0.3s;
 }
-.reporter .filter ul li .filter-item input[type=radio] {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
+@media (prefers-reduced-motion: reduce) {
+  .reporter .filter ul li .filter-item {
+    transition: none;
+  }
 }
 .reporter .filter ul li .filter-item input[type=radio]:checked + .text {
   color: hsl(0, 0%, 100%);
@@ -229,8 +224,7 @@ main {
 
 .box {
   border-radius: 0.9375rem;
-  color: #fff;
-  position: relative;
+  color: hsl(0, 0%, 100%);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -299,9 +293,6 @@ main {
   line-height: 2.0625;
   color: hsl(0, 0%, 100%);
 }
-.box .wrapper .stat-content .hours strong {
-  font-weight: inherit;
-}
 @media (min-width: 48em) {
   .box .wrapper .stat-content .hours {
     font-family: "Rubik", sans-serif;
@@ -318,9 +309,6 @@ main {
   line-height: 1;
   color: hsl(236, 100%, 87%);
   text-align: right;
-}
-.box .wrapper .stat-content .recently strong {
-  font-weight: inherit;
 }
 
 .work {

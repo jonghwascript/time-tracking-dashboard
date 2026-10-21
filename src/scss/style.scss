@@ -74,14 +74,14 @@ main {
 .reporter {
   grid-area: reporter;
   background-color: $font-color-navy-900;
-  border-radius: 0.9375rem; // 15px
+  border-radius: $radius-card;
 
   // 관계: 보라색 header가 프로필을 담고, 그 아래 같은 카드 배경 위에 기간 필터(.filter)가 놓인다.
   // 전환: 모바일·tablet은 사진과 이름을 가로로, desktop(1200px~)은 세로로 쌓고 아래 여백을 넓힌다.
   header {
     padding: 2rem; // 32px
     background-color: $purple-600;
-    border-radius: 0.9375rem; // 15px
+    border-radius: $radius-card;
     display: flex;
     align-items: center;
     gap: 1.5rem; // 24px
@@ -101,7 +101,7 @@ main {
       aspect-ratio: 1 / 1;
       flex-shrink: 0;
       object-fit: cover;
-      border: 3px solid #fff;
+      border: 3px solid $font-color-white;
       border-radius: 50%;
     }
 
@@ -154,18 +154,14 @@ main {
           color: $purple-500;
           transition: 0.3s;
 
-          // 관계: 라디오는 화면에서 숨기되 선택·키보드 포커스는 유지하고, 상태는 바로 뒤 형제 .text에 표시한다.
+          // 동작 줄이기 설정을 켠 사용자에게는 색을 즉시 바꾼다(WCAG 2.3.3).
+          @media (prefers-reduced-motion: reduce) {
+            transition: none;
+          }
+
+          // 관계: 라디오는 HTML의 .u-sr-only로 화면에서만 숨기고(선택·키보드 포커스 유지), 상태는 바로 뒤 형제 .text에 표시한다.
           // 제한: input 다음에 .text가 오는 마크업 순서에 의존한다.
           input[type='radio'] {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            border: 0;
-
             &:checked + .text {
               color: $font-color-white;
             }
@@ -193,9 +189,8 @@ main {
 // 제한: .wrapper는 남은 높이를 모두 채워 같은 행의 카드 높이를 맞추며, 아래 모서리는 .box의 radius로 잘린다.
 // 기본 색·아이콘은 work 기준이며, 카테고리 클래스가 이를 덮어쓴다.
 .box {
-  border-radius: 0.9375rem; // 15px
-  color: #fff;
-  position: relative;
+  border-radius: $radius-card;
+  color: $font-color-white;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -210,7 +205,7 @@ main {
     padding: 1.71875rem 1.5rem; // 27.5px 24px
     margin-block-start: 2.375rem; // 38px
     background-color: $font-color-navy-900;
-    border-radius: 0.9375rem 0.9375rem 0 0; // 15px
+    border-radius: $radius-card $radius-card 0 0;
 
     // 시안: 카드 hover는 배경만 밝힌다. "…" 버튼에 올렸을 때는 카드가 아니라 버튼만 반응한다.
     &:hover:not(:has(.options:hover)) {
@@ -266,10 +261,6 @@ main {
         @include m.font-style(2rem, 300, math.div(66, 32)); // 32px / 66px
         color: $font-color-white;
 
-        strong {
-          font-weight: inherit;
-        }
-
         @include m.mq('tablet') {
           @include m.font-style(3.5rem, 300, math.div(66, 56)); // 56px / 66px
         }
@@ -280,10 +271,6 @@ main {
         @include m.font-style(0.9375rem, 400, 1); // 15px
         color: $font-color-navy-200;
         text-align: right;
-
-        strong {
-          font-weight: inherit;
-        }
       }
     }
   }

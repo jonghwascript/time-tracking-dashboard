@@ -25,61 +25,65 @@
   </head>
 
   <body>
-    <main class="container">
-      <section class="reporter">
-        <header>
-          <img src="./images/image-jeremy.png" alt="" />
-          <hgroup class="user-info">
-            <p>Report for</p>
-            <h1>Jeremy Robson</h1>
+    <main class="l-dashboard">
+      <section class="c-report l-dashboard__report">
+        <header class="c-report__header">
+          <img
+            class="c-report__avatar"
+            src="./images/image-jeremy.png"
+            alt=""
+          />
+          <hgroup>
+            <p class="c-report__eyebrow">Report for</p>
+            <h1 class="c-report__name">Jeremy Robson</h1>
           </hgroup>
         </header>
-        <fieldset class="filter">
+        <fieldset class="c-report__filter c-filter">
           <legend class="u-sr-only">Timeframe</legend>
-          <ul>
+          <ul class="c-filter__list">
             <li>
-              <label class="filter-item">
+              <label class="c-filter__option">
                 <input
-                  class="u-sr-only"
+                  class="c-filter__input u-sr-only"
                   type="radio"
                   name="date-period"
                   value="daily"
                   checked
                 />
-                <span class="text">Daily</span>
+                <span class="c-filter__label">Daily</span>
               </label>
             </li>
             <li>
-              <label class="filter-item">
+              <label class="c-filter__option">
                 <input
-                  class="u-sr-only"
+                  class="c-filter__input u-sr-only"
                   type="radio"
                   name="date-period"
                   value="weekly"
                 />
-                <span class="text">Weekly</span>
+                <span class="c-filter__label">Weekly</span>
               </label>
             </li>
             <li>
-              <label class="filter-item">
+              <label class="c-filter__option">
                 <input
-                  class="u-sr-only"
+                  class="c-filter__input u-sr-only"
                   type="radio"
                   name="date-period"
                   value="monthly"
                 />
-                <span class="text">Monthly</span>
+                <span class="c-filter__label">Monthly</span>
               </label>
             </li>
           </ul>
         </fieldset>
         <p id="period-status" class="u-sr-only" aria-live="polite"></p>
       </section>
-      <section class="box work">
-        <div class="wrapper">
-          <header>
-            <h2>Work</h2>
-            <button class="options" type="button">
+      <section class="c-stat c-stat--work">
+        <div class="c-stat__body">
+          <header class="c-stat__header">
+            <h2 class="c-stat__title">Work</h2>
+            <button class="c-stat__menu" type="button">
               <svg
                 width="21"
                 height="5"
@@ -96,21 +100,17 @@
               <span class="u-sr-only">Work options</span>
             </button>
           </header>
-          <div class="stat-content">
-            <p class="hours">
-              <span class="current">32hrs</span>
-            </p>
-            <p class="recently">
-              <span class="previous">32hrs</span>
-            </p>
+          <div class="c-stat__content">
+            <p class="c-stat__hours">32hrs</p>
+            <p class="c-stat__previous">32hrs</p>
           </div>
         </div>
       </section>
-      <section class="box play">
-        <div class="wrapper">
-          <header>
-            <h2>Play</h2>
-            <button class="options" type="button">
+      <section class="c-stat c-stat--play">
+        <div class="c-stat__body">
+          <header class="c-stat__header">
+            <h2 class="c-stat__title">Play</h2>
+            <button class="c-stat__menu" type="button">
               <svg
                 width="21"
                 height="5"
@@ -127,21 +127,17 @@
               <span class="u-sr-only">Play options</span>
             </button>
           </header>
-          <div class="stat-content">
-            <p class="hours">
-              <span class="current">32hrs</span>
-            </p>
-            <p class="recently">
-              <span class="previous">32hrs</span>
-            </p>
+          <div class="c-stat__content">
+            <p class="c-stat__hours">32hrs</p>
+            <p class="c-stat__previous">32hrs</p>
           </div>
         </div>
       </section>
-      <section class="box study">
-        <div class="wrapper">
-          <header>
-            <h2>Study</h2>
-            <button class="options" type="button">
+      <section class="c-stat c-stat--study">
+        <div class="c-stat__body">
+          <header class="c-stat__header">
+            <h2 class="c-stat__title">Study</h2>
+            <button class="c-stat__menu" type="button">
               <svg
                 width="21"
                 height="5"
@@ -158,21 +154,17 @@
               <span class="u-sr-only">Study options</span>
             </button>
           </header>
-          <div class="stat-content">
-            <p class="hours">
-              <span class="current">32hrs</span>
-            </p>
-            <p class="recently">
-              <span class="previous">32hrs</span>
-            </p>
+          <div class="c-stat__content">
+            <p class="c-stat__hours">32hrs</p>
+            <p class="c-stat__previous">32hrs</p>
           </div>
         </div>
       </section>
-      <section class="box exercise">
-        <div class="wrapper">
-          <header>
-            <h2>Exercise</h2>
-            <button class="options" type="button">
+      <section class="c-stat c-stat--exercise">
+        <div class="c-stat__body">
+          <header class="c-stat__header">
+            <h2 class="c-stat__title">Exercise</h2>
+            <button class="c-stat__menu" type="button">
               <svg
                 width="21"
                 height="5"
@@ -189,21 +181,17 @@
               <span class="u-sr-only">Exercise options</span>
             </button>
           </header>
-          <div class="stat-content">
-            <p class="hours">
-              <span class="current">32hrs</span>
-            </p>
-            <p class="recently">
-              <span class="previous">32hrs</span>
-            </p>
+          <div class="c-stat__content">
+            <p class="c-stat__hours">32hrs</p>
+            <p class="c-stat__previous">32hrs</p>
           </div>
         </div>
       </section>
-      <section class="box social">
-        <div class="wrapper">
-          <header>
-            <h2>Social</h2>
-            <button class="options" type="button">
+      <section class="c-stat c-stat--social">
+        <div class="c-stat__body">
+          <header class="c-stat__header">
+            <h2 class="c-stat__title">Social</h2>
+            <button class="c-stat__menu" type="button">
               <svg
                 width="21"
                 height="5"
@@ -220,21 +208,17 @@
               <span class="u-sr-only">Social options</span>
             </button>
           </header>
-          <div class="stat-content">
-            <p class="hours">
-              <span class="current">32hrs</span>
-            </p>
-            <p class="recently">
-              <span class="previous">32hrs</span>
-            </p>
+          <div class="c-stat__content">
+            <p class="c-stat__hours">32hrs</p>
+            <p class="c-stat__previous">32hrs</p>
           </div>
         </div>
       </section>
-      <section class="box self-care">
-        <div class="wrapper">
-          <header>
-            <h2>Self Care</h2>
-            <button class="options" type="button">
+      <section class="c-stat c-stat--self-care">
+        <div class="c-stat__body">
+          <header class="c-stat__header">
+            <h2 class="c-stat__title">Self Care</h2>
+            <button class="c-stat__menu" type="button">
               <svg
                 width="21"
                 height="5"
@@ -251,22 +235,23 @@
               <span class="u-sr-only">Self Care options</span>
             </button>
           </header>
-          <div class="stat-content">
-            <p class="hours">
-              <span class="current">32hrs</span>
-            </p>
-            <p class="recently">
-              <span class="previous">32hrs</span>
-            </p>
+          <div class="c-stat__content">
+            <p class="c-stat__hours">32hrs</p>
+            <p class="c-stat__previous">32hrs</p>
           </div>
         </div>
       </section>
     </main>
-    <footer class="attribution">
+    <footer class="c-attribution">
       Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-      Coded by
-      <a href="https://www.frontendmentor.io/profile/jonghwascript"
+      <a
+        class="c-attribution__link"
+        href="https://www.frontendmentor.io?ref=challenge"
+        >Frontend Mentor</a
+      >. Coded by
+      <a
+        class="c-attribution__link"
+        href="https://www.frontendmentor.io/profile/jonghwascript"
         >jonghwascript</a
       >.
     </footer>

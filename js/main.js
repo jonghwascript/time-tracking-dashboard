@@ -1,10 +1,10 @@
 const datePeriod = $('input[name=date-period]');
-const $work = $('.box.work');
-const $play = $('.box.play');
-const $study = $('.box.study');
-const $exercise = $('.box.exercise');
-const $social = $('.box.social');
-const $selfCare = $('.box.self-care');
+const $work = $('.c-stat--work');
+const $play = $('.c-stat--play');
+const $study = $('.c-stat--study');
+const $exercise = $('.c-stat--exercise');
+const $social = $('.c-stat--social');
+const $selfCare = $('.c-stat--self-care');
 const $periodStatus = $('#period-status'); // aria-live 영역: 갱신 사실을 스크린 리더에 알림
 
 let period = null;
@@ -65,8 +65,8 @@ function modifyStatContent(obj, suffix, prefix) {
   sectionMap.forEach((value, key) => {
     const val = timeFrames(obj, key, period);
     if (val) {
-      value.find('.current').text(val.current + suffix);
-      value.find('.previous').text(prefix + val.previous + suffix);
+      value.find('.c-stat__hours').text(val.current + suffix);
+      value.find('.c-stat__previous').text(prefix + val.previous + suffix);
     }
   });
 
@@ -79,7 +79,7 @@ function announcePeriod() {
     isFirstRender = false;
     return;
   }
-  const label = datePeriod.filter(':checked').next('.text').text();
+  const label = datePeriod.filter(':checked').next('.c-filter__label').text();
   $periodStatus.text(`${label} hours shown`);
 }
 

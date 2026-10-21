@@ -91,7 +91,7 @@ body {
 .l-dashboard {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  grid-template-rows: 12.6875rem repeat(6, 1fr);
+  grid-template-rows: minmax(12.6875rem, auto) repeat(6, 1fr);
   row-gap: 1.5rem;
   width: min(69.375rem, 100% - 2 * min(1.5rem, 6.4vw));
   margin-inline: auto;
@@ -100,7 +100,7 @@ body {
 @media (min-width: 48em) {
   .l-dashboard {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-template-rows: 12.6875rem repeat(2, auto);
+    grid-template-rows: minmax(12.6875rem, auto) repeat(2, auto);
     gap: 1.5rem;
     max-width: calc(100% - 2 * min(4.875rem, 10.15625vw));
   }

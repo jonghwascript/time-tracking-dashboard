@@ -32,17 +32,18 @@ body {
 // tablet 구간은 max-width로 좌우 여백을 $space-gutter-tablet(78px)씩 남긴다(768px 화면에서 612px).
 // 전환: 모바일 1열 → tablet(768px~) 3열, 리포트가 첫 행 전체 → desktop(1200px~) 4열, 리포트가 왼쪽 두 행을 차지.
 // 모바일의 카드 행(1fr)은 가장 높은 카드에 맞춰 같은 높이가 되고, tablet 이상은 행마다 내용 높이를 따른다.
+// 제한: 리포트 행은 시안 높이 203px를 최소로 두고, 텍스트 간격·글꼴 확대로 내용이 커지면 늘어나 아래 카드와 겹치지 않는다(WCAG 1.4.12).
 .l-dashboard {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  grid-template-rows: 12.6875rem repeat(6, 1fr); // 203px
+  grid-template-rows: minmax(12.6875rem, auto) repeat(6, 1fr); // 최소 203px
   row-gap: 1.5rem; // 24px
   @include m.container(69.375rem, $space-gutter); // 1110px
   padding: 1.5rem 0; // 24px
 
   @include m.mq('tablet') {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-template-rows: 12.6875rem repeat(2, auto); // 203px
+    grid-template-rows: minmax(12.6875rem, auto) repeat(2, auto); // 최소 203px
     gap: 1.5rem; // 24px
     max-width: calc(100% - 2 * $space-gutter-tablet);
   }

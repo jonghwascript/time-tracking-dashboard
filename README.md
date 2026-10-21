@@ -95,7 +95,7 @@ I also picked up a git habit here: I had reverted a refactor commit and then rea
 
 ### Continued development
 
-I fixed the height of the dashboard's first grid row (the profile card) to a set value to match the design, but I'd like to explore whether that's the right approach or whether there's a more flexible way to size that row that still holds up across breakpoints. `minmax(12.6875rem, auto)` looks like a good candidate, since a fixed height can overflow when users enlarge the text.
+The first grid row (the profile card) used to have a fixed height of 203px to match the design. Testing it against WCAG 1.4.12 (text spacing) showed why that's fragile: with line height 1.5, letter spacing 0.12em and paragraph spacing 2em, the card's content grew to 240px on mobile and the filter labels slid under the next card. The row is now `minmax(12.6875rem, auto)`, so it keeps the design height by default and grows only when the content needs it.
 
 Two design colors are still below the WCAG AA contrast ratio of 4.5:1 for normal text: the unselected filter labels (3.79:1) and the "Report for" label (3.48:1). I'd also like to decide whether the "…" buttons should open a real menu, since they don't do anything yet.
 

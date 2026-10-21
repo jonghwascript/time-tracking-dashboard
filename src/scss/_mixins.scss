@@ -57,9 +57,9 @@
   }
 }
 
-// @include container(69.375rem, v.$space-gutter); // 최대폭(디자인 기준), 좌우 최소 여백
+// @include container(69.75rem, v.$space-gutter); // 최대폭(디자인 기준), 좌우 최소 여백
 // 미디어 쿼리 없이 min()으로 처리 → 화면이 좁으면 여백만큼만 줄고, 넓으면 최대폭에서 멈춘다.
-@mixin container($max-width: 69.375rem, $gutter: v.$space-gutter) {
+@mixin container($max-width: 69.75rem, $gutter: v.$space-gutter) {
   width: min($max-width, 100% - 2 * $gutter);
   margin-inline: auto;
 }

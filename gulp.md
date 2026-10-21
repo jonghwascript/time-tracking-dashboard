@@ -115,3 +115,44 @@ PluginError [SyntaxError]: Unexpected closing tag "p"...
 - **해결**: 1) `index.html`의 마크업 오류를 수정, 2) `prettierTask`에
   `.on("error", ...)` 핸들러를 추가해 이후에 또 깨진 파일이 들어와도
   watch 프로세스 전체가 죽지 않도록 방어.
+
+## 7. Browsersync 연동 (로컬 서버 + 자동 새로고침)
+
+```bash
+npm install --save-dev browser-sync
+```
+
+```js
+const browserSync = require("browser-sync").create();
+
+function scssTask() {
+  return gulp
+    .src("src/scss/**/*.scss")
+    // ... sass, sourcemaps ...
+    .pipe(gulp.dest("css"))
+    .pipe(browserSync.stream({ match: "**/*.css" })); // 새로고침 없이 CSS만 교체
+}
+
+function serveTask(done) {
+  browserSync.init({ server: { baseDir: "./" }, notify: false });
+  done();
+}
+
+function reloadTask(done) {
+  browserSync.reload();
+  done();
+}
+
+function watchTask() {
+  gulp.watch("src/scss/**/*.scss", scssTask);
+  gulp.watch(["*.html", "js/**/*.js", "data.json"], reloadTask);
+}
+
+exports.default = gulp.series(prettierTask, scssTask, serveTask, watchTask);
+```
+
+- `npx gulp`를 실행하면 `http://localhost:3000`이 열린다. 같은 네트워크의 휴대폰에서는 콘솔에 나오는 `External` 주소로 접속한다. `http://localhost:3001`은 Browsersync 설정 화면이다.
+- SCSS를 저장하면 컴파일 후 CSS만 바꿔 끼운다(스크롤·입력 상태 유지). HTML·JS·`data.json`을 저장하면 페이지를 새로고침한다.
+- `stream()`에 `match: "**/*.css"`를 주지 않으면 `.map` 파일까지 주입 대상이 되어 불필요하게 새로고침될 수 있다.
+- `index.html`을 파일로 직접 열면(`file://`) 브라우저가 `$.get('./data.json')`을 막아 더미 데이터로 대체된다. 서버로 띄워야 실제 데이터를 불러온다.
+- Windows에서 터미널을 강제로 닫으면 node 프로세스가 남아 3000번 포트를 계속 잡고 있을 수 있다. 다음 실행이 3002 같은 다른 포트로 뜨면 남은 프로세스를 종료한다.

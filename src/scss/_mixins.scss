@@ -18,13 +18,12 @@
   background: linear-gradient($direction, $start-color, $end-color);
 }
 
+// @include mq('tablet') { … } // $breakpoints 값 이상(min-width)에서 적용. 주석은 출력 CSS에 남지 않도록 //만 쓴다.
+// 맵에 없는 이름은 @error로 컴파일을 멈춰 오타가 조용히 무시되지 않게 한다.
 @mixin mq($device) {
-  /* 맵에 해당 기기 이름이 있는지 확인 */
   @if map.has-key(v.$breakpoints, $device) {
-    /* 🌟 min-width 기준으로 미디어 쿼리 자동 생성 */
     @media (min-width: map.get(v.$breakpoints, $device)) {
       @content;
-      /* 믹스인을 호출할 때 전달한 스타일이 여기에 쏙 들어갑니다 */
     }
   } @else {
     @error '브레이크포인트 "#{$device}"가 존재하지 않습니다.';

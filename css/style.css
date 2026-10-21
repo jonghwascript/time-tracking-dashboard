@@ -1,12 +1,3 @@
-@charset "UTF-8";
-/*
-  Light 300
-  Regular 400
-  Medium 500
-*/
-/* =========================
-   Reset
-   ========================= */
 *,
 *::before,
 *::after {
@@ -90,13 +81,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* 맵에 해당 기기 이름이 있는지 확인 */
-  /* 🌟 min-width 기준으로 미디어 쿼리 자동 생성 */
 }
 @media (min-width: 768px) {
   body {
     justify-content: center;
-    /* 믹스인을 호출할 때 전달한 스타일이 여기에 쏙 들어갑니다 */
   }
 }
 
@@ -107,66 +95,54 @@ body {
 }
 
 main {
-  width: min(20.4375rem, 100%);
   padding: 1.5rem 0;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   grid-template-rows: 203px repeat(6, 1fr);
-  grid-template-areas: "repoter" "work" "play" "study" "exercise" "social" "self-care";
+  grid-template-areas: "reporter" "work" "play" "study" "exercise" "social" "self-care";
   row-gap: 1.5rem;
-  /* 맵에 해당 기기 이름이 있는지 확인 */
-  /* 🌟 min-width 기준으로 미디어 쿼리 자동 생성 */
 }
 @media (min-width: 768px) {
   main {
-    width: min(38.25rem, 100%);
+    max-width: calc(100% - 9.75rem);
     grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-template-rows: 12.6875rem repeat(2, auto);
-    grid-template-areas: "repoter repoter repoter" "work play study" "exercise social self-care";
+    grid-template-areas: "reporter reporter reporter" "work play study" "exercise social self-care";
     gap: 1.5rem;
-    /* 믹스인을 호출할 때 전달한 스타일이 여기에 쏙 들어갑니다 */
   }
-}
-main {
-  /* 맵에 해당 기기 이름이 있는지 확인 */
-  /* 🌟 min-width 기준으로 미디어 쿼리 자동 생성 */
 }
 @media (min-width: 1200px) {
   main {
-    width: min(69.75rem, 100%);
+    max-width: none;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     grid-template-rows: repeat(2, auto);
-    grid-template-areas: "repoter work play study" "repoter exercise social self-care";
-    gap: 1.5rem;
-    /* 믹스인을 호출할 때 전달한 스타일이 여기에 쏙 들어갑니다 */
+    grid-template-areas: "reporter work play study" "reporter exercise social self-care";
+    gap: 1.875rem;
   }
 }
 
-.repoter {
-  grid-area: repoter;
+.reporter {
+  grid-area: reporter;
   background-color: hsl(235, 46%, 20%);
   border-radius: 0.9375rem;
 }
-.repoter header {
+.reporter header {
   padding: 2rem;
   background-color: hsl(246, 80%, 60%);
   border-radius: 0.9375rem;
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  /* 맵에 해당 기기 이름이 있는지 확인 */
-  /* 🌟 min-width 기준으로 미디어 쿼리 자동 생성 */
 }
 @media (min-width: 1200px) {
-  .repoter header {
+  .reporter header {
     padding: 2rem 5.3125rem 5.75rem 2rem;
     flex-direction: column;
     align-items: flex-start;
     gap: 2.5rem;
-    /* 믹스인을 호출할 때 전달한 스타일이 여기에 쏙 들어갑니다 */
   }
 }
-.repoter header img {
+.reporter header img {
   width: clamp(64px, 6vw, 4.625rem);
   height: auto;
   aspect-ratio: 1/1;
@@ -174,23 +150,20 @@ main {
   object-fit: cover;
   border: 3px solid #fff;
   border-radius: 50%;
-  /* 맵에 해당 기기 이름이 있는지 확인 */
-  /* 🌟 min-width 기준으로 미디어 쿼리 자동 생성 */
 }
 @media (min-width: 1200px) {
-  .repoter header img {
+  .reporter header img {
     max-width: 4.625rem;
-    /* 믹스인을 호출할 때 전달한 스타일이 여기에 쏙 들어갑니다 */
   }
 }
-.repoter header .user-info p {
+.reporter header .user-info p {
   font-family: "Rubik", sans-serif;
   font-size: 0.9375rem;
   font-weight: 400;
   line-height: 1.125rem;
   color: hsl(236, 100%, 87%);
 }
-.repoter header .user-info h1 {
+.reporter header .user-info h1 {
   white-space: nowrap;
   margin-block-start: 0.5rem;
   font-family: "Rubik", sans-serif;
@@ -198,45 +171,39 @@ main {
   font-weight: 300;
   line-height: 1.125rem;
   color: hsl(0, 0%, 100%);
-  /* 맵에 해당 기기 이름이 있는지 확인 */
-  /* 🌟 min-width 기준으로 미디어 쿼리 자동 생성 */
 }
 @media (min-width: 1200px) {
-  .repoter header .user-info h1 {
+  .reporter header .user-info h1 {
     font-family: "Rubik", sans-serif;
     font-size: 2.5rem;
     font-weight: 300;
     line-height: 2.9375rem;
     white-space: normal;
-    /* 믹스인을 호출할 때 전달한 스타일이 여기에 쏙 들어갑니다 */
   }
 }
-.repoter nav {
-  margin-block-start: 1.5rem;
-  /* 맵에 해당 기기 이름이 있는지 확인 */
-  /* 🌟 min-width 기준으로 미디어 쿼리 자동 생성 */
+.reporter .filter {
+  min-inline-size: 0;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  border: 0;
 }
 @media (min-width: 1200px) {
-  .repoter nav {
+  .reporter .filter {
     margin-inline-start: 2rem;
-    /* 믹스인을 호출할 때 전달한 스타일이 여기에 쏙 들어갑니다 */
   }
 }
-.repoter nav ul {
+.reporter .filter ul {
   display: flex;
   justify-content: space-around;
-  /* 맵에 해당 기기 이름이 있는지 확인 */
-  /* 🌟 min-width 기준으로 미디어 쿼리 자동 생성 */
 }
 @media (min-width: 1200px) {
-  .repoter nav ul {
+  .reporter .filter ul {
     flex-direction: column;
     gap: 1.3125rem;
     margin-bottom: 1.75rem;
-    /* 믹스인을 호출할 때 전달한 스타일이 여기에 쏙 들어갑니다 */
   }
 }
-.repoter nav ul li .filter-item {
+.reporter .filter ul li .filter-item {
   font-family: "Rubik", sans-serif;
   font-size: 1.125rem;
   font-weight: 400;
@@ -244,7 +211,7 @@ main {
   color: hsl(235, 45%, 61%);
   transition: 0.3s;
 }
-.repoter nav ul li .filter-item input[type=radio] {
+.reporter .filter ul li .filter-item input[type=radio] {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -254,17 +221,17 @@ main {
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
-.repoter nav ul li .filter-item input[type=radio]:checked + .text {
+.reporter .filter ul li .filter-item input[type=radio]:checked + .text {
   color: hsl(0, 0%, 100%);
 }
-.repoter nav ul li .filter-item input[type=radio]:focus-visible + .text {
+.reporter .filter ul li .filter-item input[type=radio]:focus-visible + .text {
   outline: 0.125rem solid hsl(0, 0%, 100%);
   outline-offset: 4px;
 }
-.repoter nav ul li .filter-item .text {
+.reporter .filter ul li .filter-item .text {
   cursor: pointer;
 }
-.repoter nav ul li .filter-item:hover {
+.reporter .filter ul li .filter-item:hover {
   color: hsl(0, 0%, 100%);
 }
 
@@ -287,18 +254,12 @@ main {
   background-color: hsl(235, 46%, 20%);
   border-radius: 0.9375rem 0.9375rem 0 0;
 }
-.box .wrapper:hover, .box .wrapper:focus-visible {
+.box .wrapper:hover:not(:has(.options:hover)) {
   background-color: hsl(235, 41%, 34%);
-  cursor: pointer;
-}
-.box .wrapper {
-  /* 맵에 해당 기기 이름이 있는지 확인 */
-  /* 🌟 min-width 기준으로 미디어 쿼리 자동 생성 */
 }
 @media (min-width: 1200px) {
   .box .wrapper {
     margin-block-start: 2.8125rem;
-    /* 믹스인을 호출할 때 전달한 스타일이 여기에 쏙 들어갑니다 */
   }
 }
 .box .wrapper {
@@ -318,23 +279,24 @@ main {
   line-height: 1.3125rem;
   color: hsl(0, 0%, 100%);
 }
-.box .wrapper header img {
-  max-inline-size: 100%;
-  block-size: auto;
+.box .wrapper header .options {
+  margin: -0.625rem -0.5rem;
+  padding: 0.625rem 0.5rem;
+  color: hsl(236, 100%, 87%);
+}
+.box .wrapper header .options:hover {
+  color: hsl(0, 0%, 100%);
 }
 .box .wrapper .stat-content {
   margin-block-start: 0.5rem;
   display: flex;
   align-items: center;
-  /* 맵에 해당 기기 이름이 있는지 확인 */
-  /* 🌟 min-width 기준으로 미디어 쿼리 자동 생성 */
 }
 @media (min-width: 768px) {
   .box .wrapper .stat-content {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
-    /* 믹스인을 호출할 때 전달한 스타일이 여기에 쏙 들어갑니다 */
   }
 }
 .box .wrapper .stat-content .hours {
@@ -348,18 +310,12 @@ main {
 .box .wrapper .stat-content .hours strong {
   font-weight: inherit;
 }
-.box .wrapper .stat-content .hours {
-  /* 맵에 해당 기기 이름이 있는지 확인 */
-  /* 🌟 min-width 기준으로 미디어 쿼리 자동 생성 */
-}
 @media (min-width: 768px) {
   .box .wrapper .stat-content .hours {
     font-family: "Rubik", sans-serif;
     font-size: 3.5rem;
     font-weight: 300;
     line-height: 4.125rem;
-    align-items: flex-start;
-    /* 믹스인을 호출할 때 전달한 스타일이 여기에 쏙 들어갑니다 */
   }
 }
 .box .wrapper .stat-content .recently {
@@ -410,12 +366,23 @@ main {
 }
 
 .attribution {
-  color: hsl(228, 45%, 44%);
   font-size: 0.6875rem;
+  color: hsl(236, 100%, 87%);
   text-align: center;
 }
-
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  text-decoration: underline;
+}
+
+.u-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 /*# sourceMappingURL=style.css.map */

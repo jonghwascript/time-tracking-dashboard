@@ -82,36 +82,35 @@ body {
   flex-direction: column;
   align-items: center;
 }
-@media (min-width: 768px) {
+@media (min-width: 48em) {
   body {
     justify-content: center;
   }
 }
 
 .container {
-  width: min(1110px, 100% - 3rem);
+  width: min(69.375rem, 100% - 2 * min(1.5rem, 6.4vw));
   margin-inline: auto;
-  min-width: 320px;
 }
 
 main {
   padding: 1.5rem 0;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  grid-template-rows: 203px repeat(6, 1fr);
+  grid-template-rows: 12.6875rem repeat(6, 1fr);
   grid-template-areas: "reporter" "work" "play" "study" "exercise" "social" "self-care";
   row-gap: 1.5rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 48em) {
   main {
-    max-width: calc(100% - 9.75rem);
+    max-width: calc(100% - 2 * min(4.875rem, 10.15625vw));
     grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-template-rows: 12.6875rem repeat(2, auto);
     grid-template-areas: "reporter reporter reporter" "work play study" "exercise social self-care";
     gap: 1.5rem;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 75em) {
   main {
     max-width: none;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -134,7 +133,7 @@ main {
   align-items: center;
   gap: 1.5rem;
 }
-@media (min-width: 1200px) {
+@media (min-width: 75em) {
   .reporter header {
     padding: 2rem 5.3125rem 5.75rem 2rem;
     flex-direction: column;
@@ -143,7 +142,7 @@ main {
   }
 }
 .reporter header img {
-  width: clamp(64px, 6vw, 4.625rem);
+  width: clamp(4rem, 6vw, 4.625rem);
   height: auto;
   aspect-ratio: 1/1;
   flex-shrink: 0;
@@ -151,34 +150,27 @@ main {
   border: 3px solid #fff;
   border-radius: 50%;
 }
-@media (min-width: 1200px) {
-  .reporter header img {
-    max-width: 4.625rem;
-  }
-}
 .reporter header .user-info p {
   font-family: "Rubik", sans-serif;
   font-size: 0.9375rem;
   font-weight: 400;
-  line-height: 1.125rem;
+  line-height: 1.2;
   color: hsl(236, 100%, 87%);
 }
 .reporter header .user-info h1 {
-  white-space: nowrap;
   margin-block-start: 0.5rem;
   font-family: "Rubik", sans-serif;
   font-size: 1.5rem;
   font-weight: 300;
-  line-height: 1.125rem;
+  line-height: 1.1666666667;
   color: hsl(0, 0%, 100%);
 }
-@media (min-width: 1200px) {
+@media (min-width: 75em) {
   .reporter header .user-info h1 {
     font-family: "Rubik", sans-serif;
     font-size: 2.5rem;
     font-weight: 300;
-    line-height: 2.9375rem;
-    white-space: normal;
+    line-height: 1.175;
   }
 }
 .reporter .filter {
@@ -187,7 +179,7 @@ main {
   padding: 0;
   border: 0;
 }
-@media (min-width: 1200px) {
+@media (min-width: 75em) {
   .reporter .filter {
     margin-inline-start: 2rem;
   }
@@ -196,7 +188,7 @@ main {
   display: flex;
   justify-content: space-around;
 }
-@media (min-width: 1200px) {
+@media (min-width: 75em) {
   .reporter .filter ul {
     flex-direction: column;
     gap: 1.3125rem;
@@ -207,7 +199,7 @@ main {
   font-family: "Rubik", sans-serif;
   font-size: 1.125rem;
   font-weight: 400;
-  line-height: 1.3125rem;
+  line-height: 1.1666666667;
   color: hsl(235, 45%, 61%);
   transition: 0.3s;
 }
@@ -225,7 +217,7 @@ main {
   color: hsl(0, 0%, 100%);
 }
 .reporter .filter ul li .filter-item input[type=radio]:focus-visible + .text {
-  outline: 0.125rem solid hsl(0, 0%, 100%);
+  outline: 2px solid hsl(0, 0%, 100%);
   outline-offset: 4px;
 }
 .reporter .filter ul li .filter-item .text {
@@ -242,14 +234,14 @@ main {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  background-position: top -0.625rem right 1.0888rem;
+  background-position: top -0.625rem right 1.0625rem;
   background-repeat: no-repeat;
   background-color: hsl(15, 100%, 70%);
   background-image: url(../images/icon-work.svg);
 }
 .box .wrapper {
   flex: 1 1 auto;
-  padding: 1.7188rem 1.5rem;
+  padding: 1.71875rem 1.5rem;
   margin-block-start: 2.375rem;
   background-color: hsl(235, 46%, 20%);
   border-radius: 0.9375rem 0.9375rem 0 0;
@@ -257,7 +249,7 @@ main {
 .box .wrapper:hover:not(:has(.options:hover)) {
   background-color: hsl(235, 41%, 34%);
 }
-@media (min-width: 1200px) {
+@media (min-width: 75em) {
   .box .wrapper {
     margin-block-start: 2.8125rem;
   }
@@ -276,7 +268,7 @@ main {
   font-family: "Rubik", sans-serif;
   font-size: 1.125rem;
   font-weight: 500;
-  line-height: 1.3125rem;
+  line-height: 1.1666666667;
   color: hsl(0, 0%, 100%);
 }
 .box .wrapper header .options {
@@ -292,7 +284,7 @@ main {
   display: flex;
   align-items: center;
 }
-@media (min-width: 768px) {
+@media (min-width: 48em) {
   .box .wrapper .stat-content {
     flex-direction: column;
     align-items: flex-start;
@@ -304,18 +296,18 @@ main {
   font-family: "Rubik", sans-serif;
   font-size: 2rem;
   font-weight: 300;
-  line-height: 4.125rem;
+  line-height: 2.0625;
   color: hsl(0, 0%, 100%);
 }
 .box .wrapper .stat-content .hours strong {
   font-weight: inherit;
 }
-@media (min-width: 768px) {
+@media (min-width: 48em) {
   .box .wrapper .stat-content .hours {
     font-family: "Rubik", sans-serif;
     font-size: 3.5rem;
     font-weight: 300;
-    line-height: 4.125rem;
+    line-height: 1.1785714286;
   }
 }
 .box .wrapper .stat-content .recently {

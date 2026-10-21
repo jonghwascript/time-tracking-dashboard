@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
 @use 'sass:map';
+@use 'sass:math';
 
 @use 'variables' as v;
 
@@ -19,10 +20,14 @@
 }
 
 // @include mq('tablet') { … } // $breakpoints 값 이상(min-width)에서 적용. 주석은 출력 CSS에 남지 않도록 //만 쓴다.
+// 맵의 px를 16으로 나눠 em으로 출력한다(768px → 48em). 사용자가 글꼴을 키우면 분기점도 함께 커져
+// 넓은 화면에서도 태블릿·모바일 배치로 바뀐다. 미디어 쿼리의 em은 브라우저 기본 글꼴 크기 기준이다.
 // 맵에 없는 이름은 @error로 컴파일을 멈춰 오타가 조용히 무시되지 않게 한다.
 @mixin mq($device) {
   @if map.has-key(v.$breakpoints, $device) {
-    @media (min-width: map.get(v.$breakpoints, $device)) {
+    $min-width: math.div(map.get(v.$breakpoints, $device), 16px) * 1em;
+
+    @media (min-width: $min-width) {
       @content;
     }
   } @else {
@@ -30,9 +35,9 @@
   }
 }
 
-// @include container(1110px, 24px); // 최대폭(디자인 기준), 좌우 최소 여백
+// @include container(69.375rem, v.$space-gutter); // 최대폭(디자인 기준), 좌우 최소 여백
 // 미디어 쿼리 없이 min()으로 처리 → 화면이 좁으면 여백만큼만 줄고, 넓으면 최대폭에서 멈춘다.
-@mixin container($max-width: 1110px, $gutter: 24px) {
-  width: min($max-width, 100% - #{$gutter * 2});
+@mixin container($max-width: 69.375rem, $gutter: v.$space-gutter) {
+  width: min($max-width, 100% - 2 * $gutter);
   margin-inline: auto;
 }

@@ -45,6 +45,7 @@ Users should be able to:
 - Mobile-first workflow
 - [Sass/SCSS](https://sass-lang.com/) - modular partials (`_variables`, `_mixins`, `_reset`)
 - BEM class naming with role prefixes: `l-` for layout, `c-` for components, `u-` for utilities
+- JavaScript with [jQuery 4](https://jquery.com/) - switching between Daily, Weekly and Monthly loads `data.json` with `$.get` and writes the current and previous hours into each card. If the request fails (for example when `index.html` is opened from the file system), it falls back to a hard-coded copy of the same data in `js/main.js`.
 - [Gulp](https://gulpjs.com/) - task runner for compiling SCSS to CSS, generating sourcemaps, and formatting with Prettier
 - [Browsersync](https://browsersync.io/) - local dev server with live reload and CSS injection
 

@@ -236,10 +236,10 @@ body {
   }
 
   // 관계: 음수 margin으로 늘린 padding을 상쇄해, 아이콘 위치는 그대로 두고 누를 수 있는 영역만 37×25px로 넓힌다.
+  // 세로는 최소 24px 기준, 가로는 카드 안쪽 여백(24px) 안에서 여유를 더 줬다.
   // 아이콘은 fill: currentColor라 버튼의 color를 따른다.
   &__menu {
-    margin: -0.625rem -0.5rem; // -10px -8px
-    padding: 0.625rem 0.5rem; // 10px 8px
+    @include m.hit-area(21px, 5px, 37px, 25px); // padding 10px 8px
     color: $font-color-navy-200;
 
     &:hover {

@@ -35,6 +35,28 @@
   }
 }
 
+// @include hit-area(21px, 5px);             // 아이콘 크기 → 최소 24×24px 영역 (WCAG 2.5.8)
+// @include hit-area(21px, 5px, 37px, 25px); // 가로·세로 목표를 따로 줄 때
+// 한쪽 padding = (목표 − 아이콘) ÷ 2, margin은 그 음수. 레이아웃 크기는 아이콘 그대로 두고
+// 누를 수 있는 영역만 넓힌다. 넓어진 만큼 주변 여백이 있어야 잘리거나 겹치지 않는다.
+@mixin hit-area(
+  $icon-width,
+  $icon-height,
+  $min-width: 24px,
+  $min-height: $min-width
+) {
+  $pad-x: math.div(math.max(0px, $min-width - $icon-width), 2);
+  $pad-y: math.div(math.max(0px, $min-height - $icon-height), 2);
+  $pad-x: math.div($pad-x, 16px) * 1rem;
+  $pad-y: math.div($pad-y, 16px) * 1rem;
+
+  // 아이콘이 이미 목표보다 크면 아무것도 출력하지 않는다.
+  @if $pad-x > 0 or $pad-y > 0 {
+    margin: (-$pad-y) (-$pad-x);
+    padding: $pad-y $pad-x;
+  }
+}
+
 // @include container(69.375rem, v.$space-gutter); // 최대폭(디자인 기준), 좌우 최소 여백
 // 미디어 쿼리 없이 min()으로 처리 → 화면이 좁으면 여백만큼만 줄고, 넓으면 최대폭에서 멈춘다.
 @mixin container($max-width: 69.375rem, $gutter: v.$space-gutter) {

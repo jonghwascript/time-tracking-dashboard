@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Time tracking dashboard</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <script defer src="./js/lib/jquery-4.0.0.min.js"></script>
+    <script defer src="./js/main.js"></script>
+
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <main class="l-dashboard">
+      <section class="c-report l-dashboard__report">
+        <header class="c-report__header">
+          <img
+            class="c-report__avatar"
+            src="./images/image-jeremy.png"
+            alt=""
+          />
+          <hgroup class="c-report__user">
+            <p class="c-report__eyebrow">Report for</p>
+            <h1 class="c-report__name">Jeremy Robson</h1>
+          </hgroup>
+        </header>
+        <fieldset class="c-report__filter c-filter">
+          <legend class="u-sr-only">Timeframe</legend>
+          <ul class="c-filter__list">
+            <li class="c-filter__item">
+              <label class="c-filter__option">
+                <input
+                  class="c-filter__input u-sr-only"
+                  type="radio"
+                  name="date-period"
+                  value="daily"
+                  checked
+                />
+                <span class="c-filter__label">Daily</span>
+              </label>
+            </li>
+            <li class="c-filter__item">
+              <label class="c-filter__option">
+                <input
+                  class="c-filter__input u-sr-only"
+                  type="radio"
+                  name="date-period"
+                  value="weekly"
+                />
+                <span class="c-filter__label">Weekly</span>
+              </label>
+            </li>
+            <li class="c-filter__item">
+              <label class="c-filter__option">
+                <input
+                  class="c-filter__input u-sr-only"
+                  type="radio"
+                  name="date-period"
+                  value="monthly"
+                />
+                <span class="c-filter__label">Monthly</span>
+              </label>
+            </li>
+          </ul>
+        </fieldset>
+        <p id="period-status" class="u-sr-only" aria-live="polite"></p>
+      </section>
+      <section class="c-stat c-stat--work">
+        <div class="c-stat__body">
+          <header class="c-stat__header">
+            <h2 class="c-stat__title">Work</h2>
+            <button class="c-stat__menu" type="button">
+              <svg
+                width="21"
+                height="5"
+                viewBox="0 0 21 5"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                />
+              </svg>
+              <span class="u-sr-only">Work options</span>
+            </button>
+          </header>
+          <div class="c-stat__content">
+            <p class="c-stat__hours">32hrs</p>
+            <p class="c-stat__previous">32hrs</p>
+          </div>
+        </div>
+      </section>
+      <section class="c-stat c-stat--play">
+        <div class="c-stat__body">
+          <header class="c-stat__header">
+            <h2 class="c-stat__title">Play</h2>
+            <button class="c-stat__menu" type="button">
+              <svg
+                width="21"
+                height="5"
+                viewBox="0 0 21 5"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                />
+              </svg>
+              <span class="u-sr-only">Play options</span>
+            </button>
+          </header>
+          <div class="c-stat__content">
+            <p class="c-stat__hours">32hrs</p>
+            <p class="c-stat__previous">32hrs</p>
+          </div>
+        </div>
+      </section>
+      <section class="c-stat c-stat--study">
+        <div class="c-stat__body">
+          <header class="c-stat__header">
+            <h2 class="c-stat__title">Study</h2>
+            <button class="c-stat__menu" type="button">
+              <svg
+                width="21"
+                height="5"
+                viewBox="0 0 21 5"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                />
+              </svg>
+              <span class="u-sr-only">Study options</span>
+            </button>
+          </header>
+          <div class="c-stat__content">
+            <p class="c-stat__hours">32hrs</p>
+            <p class="c-stat__previous">32hrs</p>
+          </div>
+        </div>
+      </section>
+      <section class="c-stat c-stat--exercise">
+        <div class="c-stat__body">
+          <header class="c-stat__header">
+            <h2 class="c-stat__title">Exercise</h2>
+            <button class="c-stat__menu" type="button">
+              <svg
+                width="21"
+                height="5"
+                viewBox="0 0 21 5"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                />
+              </svg>
+              <span class="u-sr-only">Exercise options</span>
+            </button>
+          </header>
+          <div class="c-stat__content">
+            <p class="c-stat__hours">32hrs</p>
+            <p class="c-stat__previous">32hrs</p>
+          </div>
+        </div>
+      </section>
+      <section class="c-stat c-stat--social">
+        <div class="c-stat__body">
+          <header class="c-stat__header">
+            <h2 class="c-stat__title">Social</h2>
+            <button class="c-stat__menu" type="button">
+              <svg
+                width="21"
+                height="5"
+                viewBox="0 0 21 5"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                />
+              </svg>
+              <span class="u-sr-only">Social options</span>
+            </button>
+          </header>
+          <div class="c-stat__content">
+            <p class="c-stat__hours">32hrs</p>
+            <p class="c-stat__previous">32hrs</p>
+          </div>
+        </div>
+      </section>
+      <section class="c-stat c-stat--self-care">
+        <div class="c-stat__body">
+          <header class="c-stat__header">
+            <h2 class="c-stat__title">Self Care</h2>
+            <button class="c-stat__menu" type="button">
+              <svg
+                width="21"
+                height="5"
+                viewBox="0 0 21 5"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                />
+              </svg>
+              <span class="u-sr-only">Self Care options</span>
+            </button>
+          </header>
+          <div class="c-stat__content">
+            <p class="c-stat__hours">32hrs</p>
+            <p class="c-stat__previous">32hrs</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="c-attribution">
+      Challenge by
+      <a
+        class="c-attribution__link"
+        href="https://www.frontendmentor.io?ref=challenge"
+        >Frontend Mentor</a
+      >. Coded by
+      <a
+        class="c-attribution__link"
+        href="https://www.frontendmentor.io/profile/jonghwascript"
+        >jonghwascript</a
+      >.
+    </footer>
+  </body>
+</html>
